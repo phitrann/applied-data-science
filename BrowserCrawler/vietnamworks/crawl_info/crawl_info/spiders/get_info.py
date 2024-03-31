@@ -18,14 +18,18 @@ def convert_key_value(keys_dict, text_list):
 
 class VNWCrawler(scrapy.Spider):
     name = 'vnw_i4_crawler'
-    with open ('data/urls.json', 'r') as f:
-        urls = json.load(f)
-    start_urls = [urls[0]]
+
     listdirs = os.listdir('data')
+    if('urls.json' in listdirs):
+        listdirs.remove('urls.json')
+
+    with open (f'data/{listdirs[-1]}', 'r') as f:
+        urls = json.load(f)
+ 
+    start_urls = [urls[0]]
+    listdirs = os.listdir('json')
     if 'out.json' in listdirs:
-        os.remove('data/out.json')
-    if 'newout.json' in listdirs:
-        os.remove('data/newout.json')
+        os.remove('json/out.json')
     CURRENT_URL = 0
     LIMIT = len(urls)
     ERRORS = []
@@ -94,6 +98,7 @@ class VNWCrawler(scrapy.Spider):
             
             
             job_infos = {
+                'url': self.urls[self.CURRENT_URL],
                 'job_name': job_name,
                 'company_name': company_name,
                 'salary': salary,

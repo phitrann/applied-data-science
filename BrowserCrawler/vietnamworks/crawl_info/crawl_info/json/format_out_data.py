@@ -5,9 +5,11 @@
 '''
 
 import json
+import datetime
 
-with open('data/info.json', 'r', encoding='utf8') as f:
+with open('json/out.json', 'r', encoding='utf8') as f:
     data = json.load(f)
 
-with open('data/newout.json', 'w', encoding='utf8') as f:
+timenow = str(datetime.datetime.now().strftime("%Y-%m-%d"))
+with open(f'json/{timenow}', 'w', encoding='utf8') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
