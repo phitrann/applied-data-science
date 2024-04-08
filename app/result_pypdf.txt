@@ -1,0 +1,93 @@
+PERSONAL DETAILS
+0799738634
+namdinhtuan8@gmail.com
+26/09/2002
+Huynh Man Dat, District 5, TP Hồ Chí
+Minh
+github.com/dinhtuannam
+ABOUT ME
+I am college student with a strong
+passion for technology and
+programming. My near goal is to
+become a junior backend developer. I
+have a good understanding of backend
+development using ASP.NET core , and I
+can also work effectively with the
+frontend development using React
+Framework with Typescript
+EDUCATION
+SaiGon University
+Information Technology
+10/2020 - NOW
+SKILL
+Intermediate
+JWT
+ 
+.NET Core
+ 
+Database
+ 
+Redis
+ 
+RESTful
+ 
+SQL server
+ 
+PostgreSql
+ 
+C#
+ 
+ReactJS
+ 
+Typescript
+WORK EXPERIENCE
+BACK END DEVELOPER
+07/2023 - 02/2024
+STVG Co.Ltd
+ServerWater
+- Tech : ASP.NET Core , PostgreSQL , SSE
+- Role : Backend developer
+- Description: New installation, repair, replacement of water meters. Receive requests and
+assign tasks. Reports and statistics of jobs.
+- Responsibilities : This is a project built from scratch with a team size of 2 backend
+developers. My role involves collaborating with other team members to design the
+database and system. I am responsible for constructing functionalities based on client
+requirements and fixing bugs when system errors occur
+ServerGIS
+- Tech : ASP.NET Core , PostgreSQL
+- Role : Backend developer
+- Description: The management and scheduling system for the maintenance of
+transportation equipment, roadways, water pillars, etc
+- Responsibilities : This is a previously built project where I am responsible for completing
+additional functionalities requested by the customer. My tasks include adding tables,
+creating entity relationships for those tables in the database, integrating new features into
+the system.
+PERSONAL PROJECT
+Devify - Online Learning Platform
+08/2023 - 12/2023
+- ASP.NET Core, PostgreSQL , React TS , Redis , JWT , CQRS, VNPay
+– An Online Learning Platform inspired by Udemy and F8, enabling users to purchase and
+access various online courses. This website is built with a backend using ASP.NET Core
+API and PostgreSQL, while the frontend utilizes React with TypeScript Additionally, the
+system is integrated with JWT for security purposes and Redis for caching
+- BE Github: 
+https://github.com/dinhtuannam/devify-backend
+- FE Github: 
+https://github.com/dinhtuannam/devify-frontend
+Sneaker Shop Karma - E-commerce website
+03/2023 - 05/2023
+- ASP.NET Core MVC, SQL Server , Identity, Jquery, Ajax 
+– This is an ecommerce web application for sneaker products, allowing users to quickly
+and conveniently view and purchase sneakers. The system is built with ASP.NET Core
+MVC, along with jQuery and Bootstrap for user interface handling 
+- Github : 
+https://github.com/dinhtuannam/MVC_Project
+Dinh Tuan Nam
+BACKEND DEVELOPER
+Page
+ 
+1
+ / 
+1
+ 
+- © ITviec.com
