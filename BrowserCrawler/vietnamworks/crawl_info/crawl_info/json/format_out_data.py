@@ -11,5 +11,5 @@ with open('json/out.json', 'r', encoding='utf8') as f:
     data = json.load(f)
 
 timenow = str(datetime.datetime.now().strftime("%Y-%m-%d"))
-with open(f'json/{timenow}', 'w', encoding='utf8') as f:
+with open(f'json/{timenow}.json', 'w', encoding='utf8') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)

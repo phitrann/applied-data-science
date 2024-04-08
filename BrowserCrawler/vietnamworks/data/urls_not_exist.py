@@ -14,7 +14,7 @@ with open(f'data/{list_urls[-1]}', 'r', encoding='utf-8') as f:
 
 not_exist_urls = [url for url in latest_urls if url.split('-jv?')[0] not in split_urls]
 urls.extend(not_exist_urls)
-
+print("oke")
 timenow = str(datetime.datetime.now().strftime("%Y-%m-%d"))
 newpath = 'crawl_info/crawl_info/data/' + timenow + '.json'  
 with open(newpath, 'w', encoding='utf-8') as of:

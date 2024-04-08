@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 CURRENT_PAGE = 1
 JOB_URLS = []
-NUMBER_PAGES_LOADING = 5  # Number of pages
+NUMBER_PAGES_LOADING = 3  # Number of pages
 SECOND_PAGE_LOADING = 2    # Second for loading page
 SECOND_SLEEP = 5          # Set seconds for avoiding connect to server continuously
 START_URL = 'https://www.topcv.vn/viec-lam-it?page='

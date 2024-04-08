@@ -56,8 +56,6 @@ class VNWCrawler(scrapy.Spider):
             text = [x.strip(' \n') for x in text]
             text = list(filter(None, text))
             # 4. saving the job_name, company_name, salary, end_date
-            print(len(text))
-            print(text)
             if len(text) > 3:
                 job_name = text[0]
                 company_name = text[1]
@@ -95,7 +93,15 @@ class VNWCrawler(scrapy.Spider):
                     text = list(filter(None, text))
                     new_value.append(text)
                 job_description_dict[key] = new_value
-            
+            try: 
+                address = response.xpath('/html/body/div[1]/main/div[2]/div/div/div/div[2]/div/div[1]/div[3]/div/div[1]/div[2]/span')
+                address = address.css('::text').getall()
+                if (address != None or len(address) > 0):
+                    address = address[0]
+                else:
+                    address = None
+            except:
+                address = None
             
             job_infos = {
                 'url': self.urls[self.CURRENT_URL],
@@ -103,6 +109,7 @@ class VNWCrawler(scrapy.Spider):
                 'company_name': company_name,
                 'salary': salary,
                 'end_date': end_date,
+                'address': address
             }
             job_infos.update(infos)
             job_infos.update(job_description_dict)
