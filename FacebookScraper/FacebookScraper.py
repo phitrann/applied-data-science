@@ -35,4 +35,9 @@ class FacebookScraper:
                 json.dump(comments, of, indent=4, default=str, ensure_ascii=False)
     
     def Scrap_by_group(self, groupID = None):
-        pass
+        posts = fs.get_posts(
+            group=groupID,pages=3, options={"allow_extra_requests": True}, cookies = "FacebookScraper/cookies.txt", days_limit = 1
+        )
+
+        with open('data/group-post.json', 'w', encoding='utf-8') as of:
+            json.dump(list(posts), of, indent=4, default=str, ensure_ascii=False)

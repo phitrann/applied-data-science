@@ -1,6 +1,5 @@
 import facebook_scraper as fs
 import json
-import browser_cookie3
 GROUP_ID = '5097678227028214'
 POST_ID = '2141137466239921'
 POST_URL = "https://www.facebook.com/groups/5097678227028214/?hoisted_section_header_type=recently_seen&multi_permalinks=7076413642487986"
