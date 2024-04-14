@@ -1,2 +1,5 @@
-tika
-pdfminer.six
+pdfminer.six==20231228
+pypdf==4.2.0
+spacy==2.3.9
+tika==2.6.0
+transformers==4.40.0.dev0

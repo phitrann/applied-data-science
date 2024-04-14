@@ -29,115 +29,209 @@
 
 
 
-ITviec - IT People find the BEST career
 
 
-PERSONAL DETAILS
 
-0799738634
 
-namdinhtuan8@gmail.com
 
-26/09/2002
 
-Huynh Man Dat, District 5, TP Hồ Chí
-Minh
+Data Science/AI Engineer 
 
-github.com/dinhtuannam
+TIEN PHAT BUI 
+0962980173 | buitienphat2462002@gmail.com  
 
-ABOUT ME
+https://www.linkedin.com/in/tien-phat-bui-ba3421222/ 
+https://github.com/ShynBui/ 
 
-I am college student with a strong
-passion for technology and
-programming. My near goal is to
-become a junior backend developer. I
-have a good understanding of backend
-development using ASP.NET core , and I
-can also work effectively with the
-frontend development using React
-Framework with Typescript
+Go Vap district, Ho Chi Minh city 
 
-EDUCATION
+Education 
 
-SaiGon University
+BACHELOR OF INFORMATION TECHNOLOGY(Expected 05/2024) – Ho Chi Minh City Open University – 97 Vo Van Tan, Ward 
+6, District 3, Ho Chi Minh City 
+GPA: 3.76/4.00 (Highest in Major)  
+Majors: Information Technology 
+Relevant Coursework: Machine Learning, Data Visualization and Communication, Database Systems and SQL, Natural Language 
+Processing, Computer Vision, Deep Learning and Neural Networks 
+ 
 
-Information Technology
+Skills 
 
-10/2020 - NOW
+Python 
+Libraries and frameworks: pandas, 
+matplotlib, numpy, 
+BeutifulSoup4, re, os, scikit-learn, 
+Hugging Face, transformers,  PyTorch, 
+Python-Flask, LangChain, NLTK 
+ 
 
-SKILL
+Big Data 
+Apache Hadoop, PySpark 
+ 
+SQL 
+Software: SQLite, MySQL, SQL, 
+PostgreSQL 
+ 
 
-Intermediate
-JWT  .NET Core  Database  
+Power Bi 
+Tools: Power Query, Visualize 
+ 
+C++ 
+Libraries: STL, Boot C++, 
+Armadillo 
 
-Redis  RESTful  SQL server  
+Projects 
 
-PostgreSql  C#  ReactJS  
+LEGAL SEARCH AND RES PONSE PLATFORM  –  Group competition project  November 2023 - now 
 
-Typescript
+● Provides users with quick access to legal information, delivers reliable answers to legal queries, and enables efficient navigation 
 
-WORK EXPERIENCE
+through legal codes and documents 
 
-BACK END DEVELOPER 07/2023 - 02/2024
+● Utilizes ReactJS for front-end development, employs Python Flask for back-end functionality, and enhances its capabilities with 
 
-STVG Co.Ltd
+complementary integration tools such as CI/CD (Continuous Integration/Continuous Deployment) and Docker for streamlined 
 
-ServerWater
-- Tech : ASP.NET Core , PostgreSQL , SSE
-- Role : Backend developer
-- Description: New installation, repair, replacement of water meters. Receive requests and
-assign tasks. Reports and statistics of jobs.
-- Responsibilities : This is a project built from scratch with a team size of 2 backend
-developers. My role involves collaborating with other team members to design the
-database and system. I am responsible for constructing functionalities based on client
-requirements and fixing bugs when system errors occur
+deployment processes, ensuring efficient and reliable operation 
 
-ServerGIS
-- Tech : ASP.NET Core , PostgreSQL
-- Role : Backend developer
-- Description: The management and scheduling system for the maintenance of
-transportation equipment, roadways, water pillars, etc
-- Responsibilities : This is a previously built project where I am responsible for completing
-additional functionalities requested by the customer. My tasks include adding tables,
-creating entity relationships for those tables in the database, integrating new features into
-the system.
+● Project management, ensuring a waterfall system development process, data search and preprocessing, training deep learning 
 
-PERSONAL PROJECT
+models based on PhoBERT and LangChain for question-answering tasks for answering legal and training another model to classify 
 
-Devify - Online Learning Platform 08/2023 - 12/2023
+"legal definition" sentences in legal documents, taking on the role of data designer using MySQL, and visualize the model training 
 
-- ASP.NET Core, PostgreSQL , React TS , Redis , JWT , CQRS, VNPay
-– An Online Learning Platform inspired by Udemy and F8, enabling users to purchase and
-access various online courses. This website is built with a backend using ASP.NET Core
-API and PostgreSQL, while the frontend utilizes React with TypeScript Additionally, the
-system is integrated with JWT for security purposes and Redis for caching
-- BE Github: https://github.com/dinhtuannam/devify-backend
-- FE Github: https://github.com/dinhtuannam/devify-frontend
+process for reporting using matplotlib 
 
-Sneaker Shop Karma - E-commerce website 03/2023 - 05/2023
+● Winning third prize in the Vietnam Student Informatics Olympiad - Open source competition, the project attracted the jury for its 
 
-- ASP.NET Core MVC, SQL Server , Identity, Jquery, Ajax 
-– This is an ecommerce web application for sneaker products, allowing users to quickly
-and conveniently view and purchase sneakers. The system is built with ASP.NET Core
-MVC, along with jQuery and Bootstrap for user interface handling 
-- Github : https://github.com/dinhtuannam/MVC_Project
+creativity and was considered to have the most potential. The product is open source code that is being invested in, developed 
 
-Dinh Tuan Nam
-B A C K E N D  D E V E L O P E R
+and raised capital 
 
-Page 1 / 1 - © ITviec.com
+● The article introduces the project: https://vfossa.vn/tin-tuc/code-heroes-nen-tang-tra-cuu-va-giai-dap-phap-luat-ung-dung-sang-
 
-https://github.com/dinhtuannam
-https://github.com/dinhtuannam/devify-backend
-https://github.com/dinhtuannam/devify-frontend
-https://github.com/dinhtuannam/devify-backend
+tao-cac-mo-hinh-ngon-ngu-lon-698.html 
 
-	Dinh Tuan Nam
-	PERSONAL DETAILS
-	WORK EXPERIENCE
-	ABOUT ME
-	EDUCATION
-	PERSONAL PROJECT
-	SKILL
+AN AUTOMATICALLY ANS WERING ENGLISH AND VIETNAMESE READING COMPREHENSION S YSTEM  –  Personal 
+Project  June 2021 - January 2022 
 
+● Assisting users in automatically answering Vietnamese or English reading comprehension questions by providing the system with 
+
+a passage of information (provided by the user), from which the system extracts information to answer the user's queries 
+
+● Using Hugging Face as a model repository, we employ a BERT-based model for answering English reading comprehension 
+
+questions and a PhoBERT-based model for answering Vietnamese reading comprehension questions. Gradio is utilized to design 
+
+an interactive interface for user interaction 
+
+● Taking on the role of data preparation, I utilize available datasets and scrape data from the web using BeautifulSoup4. Data 
+
+processing is performed using Python, while model fine-tuning is carried out through the use of Transformers and PyTorch. 
+
+Model evaluation and visualization of evaluation results are conducted using matplotlib 
+
+● The English question-answering model achieved a significant 78% accuracy when applied to multiple-choice questions. The 
+
+Vietnamese question-answering model also achieved an exact match accuracy of 72% 
+
+ 
+
+https://vfossa.vn/tin-tuc/code-heroes-nen-tang-tra-cuu-va-giai-dap-phap-luat-ung-dung-sang-tao-cac-mo-hinh-ngon-ngu-lon-698.html
+https://vfossa.vn/tin-tuc/code-heroes-nen-tang-tra-cuu-va-giai-dap-phap-luat-ung-dung-sang-tao-cac-mo-hinh-ngon-ngu-lon-698.html
+
+
+OTHER PROJECT  
+
+● Online library 
+
+● Time management website 
+
+● Website for book sales management 
+
+● Vietnamese toxic comment classification 
+
+Achievements and Awards 
+
+THE 2022 ICPC ASIA H O CHI MINH CITY –  HCMUTE–  Ho Chi Minh City  December 2022 
+
+● Ranked among the top 260 / 470 teams in the ICPC Asia Regionals, showcasing problem-solving skills and algorithmic 
+
+proficiency. 
+
+THE 2023 ICPC ASIA H UE CITY  –  Hue Universi ty  Of  Sc ience–  Hue City  December 2023 
+
+● Third prize in the Vietnam Student Informatics Olympiad - Open source competition. Solution building project "Developing an 
+
+application to support searching and asking questions about legal knowledge based on the Legal Code and Legal Document 
+
+Database", applying and refining LLMs models to training chat-bot to answer legal questions 
+
+THE 24H PROGRAMMING –  Ho Chi Minh Ci ty Open Universi ty  –  Ho Chi  Minh Ci ty   April 2023 
+
+● Champion of the 24h Programming Contest. Build an application that applies algorithms to suggest user habits using machine 
+
+learning and visualize daily activities and consumption habits using matplotlib, helping users manage time and money 
+
+Work Experience 
+
+DATA ANALYST  –  ISD CORP –  Tan Binh, HCM City  June 2023 - August 2023 
+
+● Created interactive dashboards and reports using Power BI, matplotlib to visualize and communicate data-driven insights to 
+
+stakeholders 
+
+● Conducted data cleaning, preprocessing, and feature engineering to ensure data quality and accuracy. Utilized statistical analysis 
+
+techniques and machine learning algorithms to develop predictive models for business forecasting 
+
+● Develop charts in the CRM system to evaluate the business performance of the enterprise. Proficient in using SQL techniques to 
+
+query data, proficiently applying matplotlib, Power BI and scikit-learn machine learning techniques to enhance customers' 
+
+decision making process 
+
+● Optimized data processing workflows, resulting in a 10% reduction in data processing time 
+
+● Developed a comprehensive customer segmentation model that improved targeted marketing campaigns and increased 
+
+customer engagement  
+
+Certification 
+
+DATA SCIENCE AND M ACHINE LEARNING CERT IFICATES  
+
+● Ho Chi Minh City University of Natural Sciences Informatics Center 
+
+● Certification Date: 2023 
+
+● Description: Helps master Python programming, use various tools and libraries for data science and machine learning engineer, 
+
+apply data preprocessing techniques, implement machine learning algorithms to solve real problems economics, and work with 
+
+Big Data technologies such as Spark and PySpark 
+
+ICPC PARTIC IPATION C ERTIFICAT E  
+
+● ICPC Foundation 
+
+● Certification Date: October 2022 
+
+● Description: The ICPC (International Collegiate Programming Contest) certificate is awarded to participants who have competed 
+
+in the ICPC regional or world finals competitions. It serves as a recognition of their accomplishment and participation in this 
+
+prestigious programming contest 
+
+ 
+
+https://drive.google.com/drive/folders/128GK66JESvlWBrhjTAGMZJp4yslfhaPy?usp=sharing
+https://drive.google.com/file/d/1MseennzeBueF44-G3xPrjHf3eI_Vorer/view?usp=sharing
+
+	Education
+	Skills
+	Projects
+	Achievements and Awards
+	Work Experience
+	Certification
 
