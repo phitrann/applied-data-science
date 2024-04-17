@@ -195,7 +195,7 @@ def get_parser(path, _type):
 
 if __name__ == "__main__":
     _type = "pypdf"
-    parser = get_parser("cv/Bui Tien Phat resume (1).pdf", _type)
+    parser = get_parser("data/cv/Bui Tien Phat resume (1).pdf", _type)
     res = parser.get_text()
     with open(f"result_{_type}.txt", "w") as f:
         f.write(res)
