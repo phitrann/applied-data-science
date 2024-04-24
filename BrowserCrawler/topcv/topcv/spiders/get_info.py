@@ -38,6 +38,7 @@ class TopCVCrawler(scrapy.Spider):
         urls = json.load(f)
  
     start_urls = [urls[0]]
+    # start_urls = ['https://www.topcv.vn/viec-lam/thuc-tap-sinh-lap-trinh-web-mobile-app-thu-nhap-3-7-trieu-thang/1160615.html?ta_source=ITJobs_LinkDetail']
     listdirs = os.listdir('json')
     if 'out.json' in listdirs:
         os.remove('json/out.json')
@@ -56,11 +57,15 @@ class TopCVCrawler(scrapy.Spider):
             job_header = response.xpath('/html/body/div[9]/div[3]/div[3]/div/div[1]/div[1]')
             job_header = job_header.css('::text').getall()
             job_header = filter_empty_string(remove_special_letter(job_header, ' \n'))
+            print("---------------------------------")
             print(job_header)
-            
-            if len(job_header) > 3: 
-                job_name = job_header[0]
-                salary = job_header[2]
+            print("---------------------------------")
+            if len(job_header) > 3:
+                salary_index = job_header.index('Mức lương')
+                address_index = job_header.index('Địa điểm')
+
+                job_name = job_header[0:salary_index]
+                salary = job_header[salary_index+1:address_index]
                 exp = job_header[6]
                 remaining = None
                 for i in range(7,len(job_header),1):
@@ -90,7 +95,7 @@ class TopCVCrawler(scrapy.Spider):
             candidate_requirement_info = dict(map(lambda i: (candidate_requirement_text[i], candidate_requirement_text[i+1]), range(len(candidate_requirement_text)-1)[::2]))
 
             job_infos = {
-                'urls': self.urls[self.CURRENT_URL],
+                # 'urls': self.urls[self.CURRENT_URL],
                 'job_name': job_name,
                 'company_name': company_name,
                 'address': address,
