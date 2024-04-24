@@ -95,7 +95,7 @@ class TopCVCrawler(scrapy.Spider):
             candidate_requirement_info = dict(map(lambda i: (candidate_requirement_text[i], candidate_requirement_text[i+1]), range(len(candidate_requirement_text)-1)[::2]))
 
             job_infos = {
-                # 'urls': self.urls[self.CURRENT_URL],
+                'urls': self.urls[self.CURRENT_URL],
                 'job_name': job_name,
                 'company_name': company_name,
                 'address': address,
