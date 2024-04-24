@@ -94,12 +94,12 @@ class VNWCrawler(scrapy.Spider):
                     new_value.append(text)
                 job_description_dict[key] = new_value
             try: 
-                address = response.xpath('/html/body/div[1]/main/div[2]/div/div/div/div[2]/div/div[1]/div[3]/div/div[1]/div[2]/span')
-                address = address.css('::text').getall()
-                if (address != None or len(address) > 0):
-                    address = address[0]
-                else:
-                    address = None
+                address = response.xpath('/html/body/div[1]/main/div[2]/div/div/div/div[2]/div/div[1]/div[3]/div/div[1]/div[2]/p/text()').getall()
+                # address = address.css('::text').getall()
+                # if (address != None or len(address) > 0):
+                #     address = address[0]
+                # else:
+                #     address = None
             except:
                 address = None
             
