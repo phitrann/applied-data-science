@@ -1,23 +1,14 @@
-############################################  NOTE  ########################################################
-#
-#           Creates NER training data in Spacy format from JSON downloaded from Dataturks.
-#
-#           Outputs the Spacy training data which can be used for Spacy training.
-#
-############################################################################################################
 import json
 import random
 import logging
-from sklearn.metrics import classification_report
-from sklearn.metrics import precision_recall_fscore_support
 from spacy.gold import GoldParse
-from spacy.scorer import Scorer
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import accuracy_score
 def convert_dataturks_to_spacy(dataturks_JSON_FilePath):
     try:
         training_data = []
         lines=[]
-        with open(dataturks_JSON_FilePath, 'r') as f:
+        with open(dataturks_JSON_FilePath, 'r', encoding='utf-8') as f:
             lines = f.readlines()
 
         for line in lines:
@@ -43,12 +34,39 @@ def convert_dataturks_to_spacy(dataturks_JSON_FilePath):
     except Exception as e:
         logging.exception("Unable to process " + dataturks_JSON_FilePath + "\n" + "error = " + str(e))
         return None
+    
+    
+def clean_entities(training_data):
+  clean_data = []
+  for text, annotation in training_data:
+        
+    entities = annotation.get('entities')
+    entities_copy = entities.copy()
+        
+    # append entity only if it is longer than its overlapping entity
+    i = 0
+    for entity in entities_copy:
+      j = 0
+      for overlapping_entity in entities_copy:
+        # Skip self
+        if i != j:
+          e_start, e_end, oe_start, oe_end = entity[0], entity[1], overlapping_entity[0], overlapping_entity[1]
+          # Delete any entity that overlaps, keep if longer
+          if ((e_start >= oe_start and e_start <= oe_end) \
+          or (e_end <= oe_end and e_end >= oe_start)) \
+          and ((e_end - e_start) <= (oe_end - oe_start)):
+            entities.remove(entity)
+        j += 1
+      i += 1
+    clean_data.append((text, {'entities': entities}))
+                
+  return clean_data
 
 import spacy
 ################### Train Spacy NER.###########
 def train_spacy():
 
-    TRAIN_DATA = convert_dataturks_to_spacy("traindata.json")
+    TRAIN_DATA = clean_entities(convert_dataturks_to_spacy("/space/hotel/phit/personal/applied-data-science/data/ner/traindata.json"))
     nlp = spacy.blank('en')  # create blank Language class
     # create the built-in pipeline components and add them to the pipeline
     # nlp.create_pipe works for built-ins that are registered with spaCy
@@ -67,28 +85,27 @@ def train_spacy():
     with nlp.disable_pipes(*other_pipes):  # only train NER
         optimizer = nlp.begin_training()
         for itn in range(10):
-            print("Statring iteration " + str(itn))
+            print("Starting iteration " + str(itn))
             random.shuffle(TRAIN_DATA)
             losses = {}
             for text, annotations in TRAIN_DATA:
-                nlp.update(
-                    [text],  # batch of texts
-                    [annotations],  # batch of annotations
-                    drop=0.2,  # dropout - make it harder to memorise data
-                    sgd=optimizer,  # callable to update weights
-                    losses=losses)
+                try:
+                    nlp.update(
+                        [text],  # batch of texts
+                        [annotations],  # batch of annotations
+                        drop=0.2,  # dropout - make it harder to memorise data
+                        sgd=optimizer,  # callable to update weights
+                        losses=losses)
+                except Exception as e:
+                    pass
             print(losses)
+    nlp.to_disk("nlp_ner_model")
     #test the model and evaluate it
-    examples = convert_dataturks_to_spacy("testdata.json")
-    tp=0
-    tr=0
-    tf=0
-
-    ta=0
+    examples = clean_entities(convert_dataturks_to_spacy("/space/hotel/phit/personal/applied-data-science/data/ner/testdata.json"))
     c=0        
     for text,annot in examples:
 
-        f=open("resume"+str(c)+".txt","w")
+        f=open("resumes/resume"+str(c)+".txt","w")
         doc_to_test=nlp(text)
         d={}
         for ent in doc_to_test.ents:
@@ -111,8 +128,6 @@ def train_spacy():
             y_true = [ent.label_ if ent.label_ in x else 'Not '+ent.label_ for x in gold.ner]
             y_pred = [x.ent_type_ if x.ent_type_ ==ent.label_ else 'Not '+ent.label_ for x in doc_to_test]  
             if(d[ent.label_][0]==0):
-                #f.write("For Entity "+ent.label_+"\n")   
-                #f.write(classification_report(y_true, y_pred)+"\n")
                 (p,r,f,s)= precision_recall_fscore_support(y_true,y_pred,average='weighted')
                 a=accuracy_score(y_true,y_pred)
                 d[ent.label_][0]=1

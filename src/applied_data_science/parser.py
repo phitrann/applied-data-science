@@ -6,11 +6,15 @@ from pdfminer.high_level import extract_text
 from pypdf import PdfReader
 import spacy
 
+from langchain_community.document_loaders import UnstructuredFileLoader, JSONLoader
+
 # os.environ["TIKA_SERVER_JAR"] = "https://repo1.maven.org/maven2/org/apache/tika/tika-server/1.19/tika-server-1.19.jar"
 # os.environ["no_proxy"] = "http://localhost:9998/tika"    
 
 # https://github.com/chrismattmann/tika-python
 # https://github.com/pdfminer/pdfminer.six
+
+CACHE_DIR = "/space/hotel/phit/personal/applied-data-science/cache"
 
 os.environ["no_proxy"] = "localhost"
 
@@ -106,8 +110,8 @@ class Parser:
         if use_llm:
             from transformers import AutoTokenizer, AutoModelForCausalLM
 
-            tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b", cache_dir="./cache")
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-7b", device_map="auto", cache_dir="./cache")
+            tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b", cache_dir=CACHE_DIR)
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-7b", device_map="auto", cache_dir=CACHE_DIR)
 
             input_text = f"Perform named entity recognition on the following text: {text}"
             input_ids = tokenizer(input_text, return_tensors="pt").to("cuda")
@@ -193,11 +197,11 @@ def get_parser(path, _type):
 
 
 
-if __name__ == "__main__":
-    _type = "pypdf"
-    parser = get_parser("data/cv/Bui Tien Phat resume (1).pdf", _type)
-    res = parser.get_text()
-    with open(f"result_{_type}.txt", "w") as f:
-        f.write(res)
-    # print(res)
-    parser.parse(res, use_llm=True)
+# if __name__ == "__main__":
+#     _type = "pypdf"
+#     parser = get_parser("data/cv/Bui Tien Phat resume (1).pdf", _type)
+#     res = parser.get_text()
+#     with open(f"result_{_type}.txt", "w") as f:
+#         f.write(res)
+#     # print(res)
+#     parser.parse(res, use_llm=True)

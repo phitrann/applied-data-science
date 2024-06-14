@@ -1,0 +1,84 @@
+PHAN TRAN SON BAO
+
+0938009294 | sonbao0901@gmail.com | https://github.com/sonbao0901 |
+
+https://www.linkedin.com/in/phantransonbao/
+
+About
+
+I am a senior student at the University of Economics in Ho Chi Minh City, majoring in Data Science. With a big passion for working with
+
+data and models and I am eager to gain more experiences from realistic problems in a company. I am a dedicated person and a
+
+collaborative teammate. I find working with data and models to be both challenging and rewarding, and I am always looking for new
+
+things to learn and improve my skills, gain more valuable experiences. I am currently seeking a internship position in the fields of Data
+
+Science. I am excited to be a part of your company and contribute my skills and knowledge to your company.
+
+Education
+
+University of Economics, Ho Chi Minh City - Viet Nam
+
+Bachelor Degree in Data Science (2020-2024)
+
+Cumulative GPA: 7.6/10
+
+Certifications
+
+HackerRank SQL, Python (Basic) Certificate
+
+HackerRank Problem Solving (Intermediate) Certificate
+
+Coursera Google Data Analytics Certificate
+
+Coursera IBM Data Analyst Certificate
+
+Coursera IBM Data Science Certificate
+
+Projects
+
+Supermarket Analysis And Do Customer Segmentation. (Team)
+
+Preprocessing data with python, normal EDA, using RFM method to analysis and label data.
+
+Visualize plot/chart using matplotlib and seaborn.
+
+Doing tests to see if there is a the differences or dependances between 2 feature.
+
+Using data after doing RFM and RFM label to predict customer segmentation with SVM model and evaluate the model.
+
+Predicting Whether A Client Subcribe A Term Deposit Or Not With Deep-Learning Model.
+
+Preprocessing data: checking missing values, encoding, balancing data target,….
+
+Visualize plot/chart using matplotlib and seaborn.
+
+Building deep learning model with various values of hyperparameters (layers, neurons, batch_size,…).
+
+Compare models and choose the best model for the data.
+
+Crawl Data From Facebook To Do Sentiment Analysis, Build Personal Recommender System and Text Summarization.
+
+Crawl data from Facebook.
+
+Preprocessing text with nltk, pyvi.
+
+Preprocessing react and do basic analysis.
+
+Using pre-trained model to do sentiment analysis and compare them.
+
+Using K-Nearst Neighbor and TF-IDF to build a basic recommender system for text.
+
+Using pre-trained model to do text summarization and evaluate.
+
+Skills
+
+Language: Python (pandas, numpy, sklearn, tensoflow,..), SQL.
+
+Visualization: Power BI, Python (matplotlib, seaborn).
+
+Others: Excel (pivot table, visualize), Word, PowerPoint.
+
+Pursing: Statistic, Machine Learning, Deep Learning.
+
