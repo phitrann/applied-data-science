@@ -5,3 +5,5 @@ cache/*
 experiments/*
 
 .env
+
+nlp_ner_model/*
