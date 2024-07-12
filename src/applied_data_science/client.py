@@ -44,41 +44,38 @@ class RAGClient:
         # self.chain = prompt_template | llm | StrOutputParser()
         
 
-    def stream(self, rulebase=False) -> dict:
-        if rulebase:
-            pass
-        else:
-            try:
-                logger.info(self.user_cv)
-                output = self.retrieve_context(self.user_cv[0].page_content)
-                contexts, similarity_score = [out[0] for out in output], [out[1] for out in output]
-                
-                context = contexts[0].page_content
-                for sim in similarity_score:
-                    if sim < 0.005:
-                        context = "This context is not confident. " + context
-            except RAGException as e:
-                contexts, similarity_score = [e.args[0]], 0
-            logger.info(len(contexts))
-            # for r in self.chain.stream({"context": context, "question": query}):
-            #     yield r
+    def stream(self, query: str, rulebase=False) -> dict:
+        try:
+            logger.info(self.user_cv)
+            output = self.retrieve_context(self.user_cv[0].page_content)
+            contexts, similarity_score = [out[0] for out in output], [out[1] for out in output]
             
-            # for context in contexts[:3]:
-            #     for r in self.chain.stream({"context": context.page_content + self.user_cv[0].page_content, "question": query}):
-            #         yield r
-            
-            for i, context in enumerate(contexts):
-                yield {
-                    "image_url": "https://images.nightcafe.studio/jobs/entODB9RZWd9sm7F6mvz/entODB9RZWd9sm7F6mvz--1--kw649.jpg",
-                    "name": context.metadata.get("job_name", ""),
-                    "company_name": context.metadata.get("company_name", ""),
-                    "job_level": context.metadata.get("job_level", ""),
-                    "url": context.metadata.get("url", ""),
-                    "description": context.page_content,
-                    "salary": context.metadata.get("salary", ""),
-                    "job_description": context.metadata.get("job_description", ""),
-                    "similarity_score": similarity_score[i],
-                }
+            context = contexts[0].page_content
+            for sim in similarity_score:
+                if sim < 0.005:
+                    context = "This context is not confident. " + context
+        except RAGException as e:
+            contexts, similarity_score = [e.args[0]], 0
+        logger.info(len(contexts))
+        # for r in self.chain.stream({"context": context, "question": query}):
+        #     yield r
+        
+        # for context in contexts[:3]:
+        #     for r in self.chain.stream({"context": context.page_content + self.user_cv[0].page_content, "question": query}):
+        #         yield r
+        
+        for i, context in enumerate(contexts):
+            yield {
+                "image_url": "https://images.nightcafe.studio/jobs/entODB9RZWd9sm7F6mvz/entODB9RZWd9sm7F6mvz--1--kw649.jpg",
+                "name": context.metadata.get("job_name", ""),
+                "company_name": context.metadata.get("company_name", ""),
+                "job_level": context.metadata.get("job_level", ""),
+                "url": context.metadata.get("url", ""),
+                "description": context.page_content,
+                "salary": context.metadata.get("salary", ""),
+                "job_description": context.metadata.get("job_description", ""),
+                "similarity_score": similarity_score[i],
+            }
         
     def retrieve_context(self, query: str):
         return retrieve_context(
